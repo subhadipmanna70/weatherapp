@@ -5,13 +5,16 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=26e65fc035199ab2bc5dc9b8a795d495`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location} &units=imperial &appid=26e65fc035199ab2bc5dc9b8a795d495`;
+  // `https://api.unsplash.com/1600*900/?"+${location}+"`
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
         console.log(response.data);
+
+
       })
       setLocation('')
     }
@@ -19,6 +22,9 @@ function App() {
 
   return (
     <div className="app">
+
+      <div className="container">
+
       <div className="search">
 <input
 type="text"
@@ -28,8 +34,8 @@ onKeyPress={searchLocation}
 placeholder='Enter Location'
 />
       </div>
-    
-      <div className="container">
+
+
         <div className="top">
           <div className="location">
             <p> {data.name}</p>
@@ -59,7 +65,10 @@ placeholder='Enter Location'
           </div>
         </div>
       </div>
-    </div>
+
+      </div>
+
+ 
   );
 }
 
