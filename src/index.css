@@ -33,6 +33,9 @@ background-color: rgba(0,0,0,0.4);
 color: #fff;
 }
 
+
+  
+
 .app::before{
 content: '';
 background: url('./assets/sunset.jpg') no-repeat center center/cover;
